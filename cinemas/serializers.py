@@ -14,7 +14,14 @@ class RoomSerializers(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class RoomSerializers(serializers.ModelSerializer):
+class SeatSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Rooms
+        model = Seats
         fields = "__all__"
+
+
+class ShowTimeSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = ShowTimes
+        fields = "__all__"
+

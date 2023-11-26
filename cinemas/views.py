@@ -16,6 +16,30 @@ class CinemaUserView(generics.ListCreateAPIView):
     permission_classes = [AllowAny]
 
 
+class SeatViewSet(viewsets.ModelViewSet):
+    queryset = Cinemas.objects.all()
+    serializer_class = SeatSerializers
+    permission_classes = [IsAdminUser]
+
+
+class SeatUserView(generics.ListCreateAPIView):
+    queryset = Cinemas.objects.all()
+    serializer_class = SeatSerializers
+    permission_classes = [AllowAny]
+
+
+class ShowTimeViewSet(viewsets.ModelViewSet):
+    queryset = Cinemas.objects.all()
+    serializer_class = ShowTimeSerializers
+    permission_classes = [IsAdminUser]
+
+
+class ShowTimeUserView(generics.ListCreateAPIView):
+    queryset = Cinemas.objects.all()
+    serializer_class = ShowTimeSerializers
+    permission_classes = [AllowAny]
+
+
 class RoomViewSet(viewsets.ModelViewSet):
     queryset = Cinemas.objects.all()
     serializer_class = RoomSerializers
@@ -26,5 +50,3 @@ class RoomUserView(generics.ListCreateAPIView):
     queryset = Cinemas.objects.all()
     serializer_class = RoomSerializers
     permission_classes = [AllowAny]
-
-
