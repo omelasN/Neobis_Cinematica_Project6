@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import *
 from django.contrib import auth
 
 
@@ -42,3 +42,9 @@ class LoginSerializer(serializers.ModelSerializer):
             'username': user.username,
             'tokens': user.tokens()
         }
+
+
+class FeedbackSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Feedback
+        fields = "__all__"

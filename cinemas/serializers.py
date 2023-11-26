@@ -12,3 +12,9 @@ class RoomSerializers(serializers.ModelSerializer):
     class Meta:
         model = Rooms
         fields = "__all__"
+
+
+class RoomSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Rooms
+        fields = "__all__"

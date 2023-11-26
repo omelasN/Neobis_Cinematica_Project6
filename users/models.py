@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from rest_framework_simplejwt.tokens import RefreshToken
+from movies.models import Movie
 
 
 class UserManager(BaseUserManager):
@@ -39,3 +40,13 @@ class User(AbstractUser):
 
     def str(self):
         return f"{self.username}"
+
+
+class Feedback(models.Model):
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    about_film = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user} - {self.about_film}"
