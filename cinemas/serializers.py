@@ -4,24 +4,36 @@ from .models import *
 
 class CinemaSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Cinemas
+        model = Cinema
         fields = "__all__"
 
 
 class RoomSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Rooms
+        model = Room
         fields = "__all__"
 
 
 class SeatSerializers(serializers.ModelSerializer):
     class Meta:
-        model = Seats
+        model = Seat
         fields = "__all__"
 
 
 class ShowTimeSerializers(serializers.ModelSerializer):
     class Meta:
-        model = ShowTimes
+        model = ShowTime
+        fields = "__all__"
+
+
+class DiscountSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Discount
+        fields = "__all__"
+
+
+class TicketSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Ticket
         fields = "__all__"
 

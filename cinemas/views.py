@@ -5,48 +5,66 @@ from .serializers import *
 
 
 class CinemaViewSet(viewsets.ModelViewSet):
-    queryset = Cinemas.objects.all()
+    queryset = Cinema.objects.all()
     serializer_class = CinemaSerializers
     permission_classes = [IsAdminUser]
 
 
 class CinemaUserView(generics.ListCreateAPIView):
-    queryset = Cinemas.objects.all()
+    queryset = Cinema.objects.all()
     serializer_class = CinemaSerializers
     permission_classes = [AllowAny]
 
 
 class SeatViewSet(viewsets.ModelViewSet):
-    queryset = Cinemas.objects.all()
+    queryset = Seat.objects.all()
     serializer_class = SeatSerializers
     permission_classes = [IsAdminUser]
 
 
 class SeatUserView(generics.ListCreateAPIView):
-    queryset = Cinemas.objects.all()
+    queryset = Seat.objects.all()
     serializer_class = SeatSerializers
     permission_classes = [AllowAny]
 
 
 class ShowTimeViewSet(viewsets.ModelViewSet):
-    queryset = Cinemas.objects.all()
+    queryset = ShowTime.objects.all()
     serializer_class = ShowTimeSerializers
     permission_classes = [IsAdminUser]
 
 
 class ShowTimeUserView(generics.ListCreateAPIView):
-    queryset = Cinemas.objects.all()
+    queryset = ShowTime.objects.all()
     serializer_class = ShowTimeSerializers
     permission_classes = [AllowAny]
 
 
 class RoomViewSet(viewsets.ModelViewSet):
-    queryset = Cinemas.objects.all()
+    queryset = Room.objects.all()
     serializer_class = RoomSerializers
     permission_classes = [IsAdminUser]
 
 
 class RoomUserView(generics.ListCreateAPIView):
-    queryset = Cinemas.objects.all()
+    queryset = Room.objects.all()
     serializer_class = RoomSerializers
+    permission_classes = [AllowAny]
+
+
+class DiscountViewSet(viewsets.ModelViewSet):
+    queryset = Discount.objects.all()
+    serializer_class = DiscountSerializers
+    permission_classes = [IsAdminUser]
+
+
+class DiscountUserView(generics.ListCreateAPIView):
+    queryset = Discount.objects.all()
+    serializer_class = DiscountSerializers
+    permission_classes = [AllowAny]
+
+
+class TicketUserView(generics.ListCreateAPIView):
+    queryset = Ticket.objects.all()
+    serializer_class = TicketSerializers
     permission_classes = [AllowAny]
